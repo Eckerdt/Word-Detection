@@ -109,7 +109,7 @@ def sd_callback(rec, frames, time, status):
         location_list = list(location_dict)
 
         print("####   " + location_list[np.argmax(output_data)] + "   ####")
-        stopp=True
+        #stopp=True
 
 
 
@@ -123,12 +123,14 @@ def sd_callback(rec, frames, time, status):
 
 
 
-#timer(stream=sd.InputStream(channels=num_channels,samplerate=sample_rate, blocksize=int(sample_rate * rec_duration), callback=sd_callback), duration=5)
 
 
-with sd.InputStream(channels=num_channels,samplerate=sample_rate, blocksize=int(sample_rate * rec_duration), callback=sd_callback):
-        while stopp == False:
-            pass
+try:
+    with sd.InputStream(channels=num_channels,samplerate=sample_rate, blocksize=int(sample_rate * rec_duration), callback=sd_callback):
+            while True:
+                pass
+except KeyboardInterrupt:
+    print("Interrupted!")
 
 
 

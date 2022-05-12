@@ -13,11 +13,11 @@ import time
 
 # Parameters
 audio_length= 1.5
-debug_time = 1
+debug_time = 0
 debug_acc = 0
 
 word_threshold = 0.5
-rec_duration = 0.6
+rec_duration = 0.4
 stopp= 0
 sample_rate = 22050
 
